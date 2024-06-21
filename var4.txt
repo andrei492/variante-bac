@@ -1,0 +1,182 @@
+I
+1.b
+2.
+a.17151311975
+b.1 -1
+c.
+citește a,b
+dacă a<b atunci
+  a<->b
+x <- a
+cât timp x >= b execută
+  dacă x%2 != 0 atunci
+    scrie x,' '
+  x <- x - 1
+
+d.
+#include <iostream>
+using namespace std;
+int main(){
+    int a, b;
+    cin >> a >> b;
+    if(a < b){
+        swap(a, b);
+    }
+    for(int x = a; x <= b; x--){
+        if(x % 2 != 0){
+            cout << x << ' ';
+        }
+    }
+    return 0;
+}
+
+
+II
+1.c
+2.a
+3. 1 2
+4.
+if(s[i] >= 97 && s[i] <= 122){
+    char t[10];
+    strcpy(t, s + i + 1);
+    strcpy(s + i, t);
+}
+
+5.
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    int mat[n][n];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (i + j == n - 1)
+            {
+                mat[i][j] = 0;
+            }
+            else
+            {
+                mat[i][j] = n - i;
+            }
+            
+            
+        }
+        
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << mat[i][j] << " ";
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}
+
+
+III
+1.c
+2.01111
+3.
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream in("bac.txt");
+int v[100];
+int main(){
+    int x;
+    while (in >> x)
+    {
+        if (x < 100)
+        {
+            v[x]++;
+        }
+    }
+    int ok = 0;
+    for (int i = 0; i >= 0; i++)
+    {
+        if (v[i] != 0)
+        {
+            cout << i << " ";
+            ok = 1;
+        } 
+    }
+    if (ok == 0)
+    {
+        cout << "NU EXISTA";
+    }
+}
+4.
+#include <iostream>
+using namespace std;
+
+int v[10];
+
+int cif(int a, int b){
+    int contor = 0;
+    while (a)
+    {
+        if (a % 10 == b)
+        {
+            contor ++;
+        }
+        a /= 10;
+    }
+    return contor;
+}
+
+int main(){
+    int contor = 0, n, sg, nr = 0;
+    cin >> n;
+    while (n)
+    {
+        if (v[n%10] == 0)
+        {
+            v[n%10] = cif(n, n%10);
+            if (cif(n, n%10) == 1)
+            {
+                contor++;
+                sg = n%10;
+            }
+            
+        }
+        n /= 10;
+    }
+    if (contor > 1)
+    {
+        cout << 0;
+    }
+    else
+    {
+        int p;
+        for (int i = 0; i < 10; i++)
+        {
+            if (v[i] == 2)
+            {
+                nr = nr*p + i;
+                v[i]--;
+                p *= 10;
+            }
+            
+        }
+        nr = nr*p + sg;
+        v[sg]--;
+        p *= 10;
+        for (int i = 9; i >= 0; i--)
+        {
+            if (v[i] == 1)
+            {
+                nr = nr* p + i;
+                v[i]--;
+                p *= 10;
+            }
+            
+        }
+    }
+    cout << nr;
+}

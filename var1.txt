@@ -1,0 +1,114 @@
+subI
+
+1.d
+
+2.
+a.963
+b.61 65 67
+c.
+citeste n
+z <- 0
+p <- 1
+daca n > 0
+    repeta
+        c <- n % 10
+        n <- n / 10
+        daca c % 3 atunci
+            z <- z + p * (9 - c)
+            p <- p * 10
+    pana cand n <= 0;
+scrie z
+d.
+#include <iostream>
+using namespace std;
+int main(){
+    int n, z = 0, p = 1, c;
+    cin >> n;
+    while (n > 0)
+    {
+        c = n % 10;
+        n /= 10;
+        if (c % 3 == 0)
+        {
+            z += p * (9 - c);
+            p *= 10;
+        } 
+        
+    }
+    cout << z;    
+}
+
+subII
+1. c
+2. d
+3. C.x = (A.x + B.x) / 2; C.y = (A.y + B.y) / 2
+4. 1, 2, 3, 8
+5.
+#include <iostream>
+using namespace std;
+int main(){
+    int n, m, mat[100][100];
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= m; j++)
+        {
+            if (i <= j)
+            {
+                mat[i][j] = i;
+            }
+            else
+            {
+                mat[i][j] = j;
+            }
+            
+        }
+        
+    }
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= m; j++)
+        {
+            cout << mat[i][j] << " ";
+        }
+        cout << endl;
+    }
+       
+}
+
+subIII
+1.b
+2.12345
+3.
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream in("bac.txt");
+int main(){
+    int n,x;
+    cin >> n;
+    while(in >> x){
+        if (x % n == 0)
+        {
+            cout << x << " ";
+        }
+        
+    }
+}
+
+4.
+a.
+int sub(int v[100], int n, int a){
+    int contor = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (v[i] < a)
+        {
+            contor ++;
+        }
+        
+    }
+    return contor;
+}
+
+b.???
