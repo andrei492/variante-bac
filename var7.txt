@@ -1,0 +1,125 @@
+I
+1.b
+2.
+a. 9432
+b. 9654
+c.
+citeste n
+nr <- 0
+a <- 9
+repeta
+    m <- n
+    cat timp m != 0 si m % 10 != a executa
+        m <- [m / 10]
+    daca m != 0 atunci
+        nr <- nr * 10 + m % 10
+    a <- a - 1
+pana cand a < 0
+scrie nr
+
+d.
+#include <iostream>
+using namespace std
+int main() {
+    int n, nr = 0;
+    cin >> n;
+    
+    for (int a = 9; a >= 0; --a) {
+        int m = n;
+        while (m != 0 && m % 10 != a) {
+            m /= 10;
+        }
+        if (m != 0) {
+            nr = nr * 10 + m % 10;
+        }
+    }
+    
+    cout << nr;
+    return 0;
+}
+
+II
+1.a
+2.c
+3. 1
+4.128
+5.
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+    char text[256];
+    cin.getline(text, 256);
+    
+    int lungime = strlen(text);
+    int pu = -1;
+
+    for (int i = 0; i < lungime; ++i) {
+        char c = text[i];
+        if ((c >= 'a' && c <= 'z') && !(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')) {
+            pu = i;
+        }
+    }
+
+    if (pu != -1) {
+        for (int i = pu; i < lungime - 1; ++i) {
+            text[i] = text[i + 1];
+        }
+        text[lungime - 1] = '\0';
+    }
+
+    cout << text;
+    return 0;
+}
+
+III
+
+1.c
+2.
+12346
+12356
+12456
+13456
+23456
+3.
+#include <iostream>
+#include <fstream>
+using namespace std;
+ofstream out("BAC.TXT");
+int main() {
+    int n;
+    cin >> n;
+    int v[300];
+    for (int i = 0; i < 3 * n; ++i) {
+        cin >> v[i];
+    }
+    int pp = -1;
+    for (int i = 0; i < n; ++i) {
+        if (v[i] % 2 == 0) {
+            pp = i;
+            break;
+        }
+    }
+    int up = -1;
+    for (int i = 3 * n - 1; i >= 2 * n; --i) {
+        if (v[i] % 2 != 0) {
+            up = i;
+            break;
+        }
+    }
+    if (pp != -1 && up != -1) {
+        int aux = v[pp];
+        v[pp] = v[up];
+        v[up] = aux;
+    }
+    for (int i = 0; i < 3 * n; ++i) {
+        out << v[i];
+        if (i < 3 * n - 1) {
+            out << " ";
+        }
+    }
+    return 0;
+}
+
+4.
+
