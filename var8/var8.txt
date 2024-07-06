@@ -7,4 +7,40 @@ c.
 d.
 
 II
+1.b
+2.c
+3.6
+4.
+5.
+#include <iostream>
+using namespace std;
+int main(){
+    int n, p, cont = 1;
+    cin >> n >> p;
+    int mat[n][p];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < p; j++)
+        {
+            mat[i][j] = cont * cont;
+            cont += 2;
+        }
+        
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < p; j++)
+        {
+            cout << mat[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+III
+1.c
+2.
+2 
+1 2 3
+3.
+
 
