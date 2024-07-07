@@ -1,0 +1,89 @@
+I
+1.b
+2.
+a.1
+b.1023
+c.
+citeste n
+s <- 10
+repeta
+    daca n%10 < s atunci
+        s <- n%10
+    altfel
+        s <- -1
+    n <- n/10
+pana cand n = 0
+scrie s
+d.
+#include <iostream>
+using namespace std
+int main(){
+    int n, s;
+    cin >> n;
+    s = 10;
+    while(n > 0){
+        if(n%10 < s){
+            s = n%10;
+        }
+        else{
+            s = -1;
+        }
+        n /= 10;
+    }
+    cout << s;
+}
+
+II
+
+1.a
+2.a
+3.1
+4.abcd123efg
+5.
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    int mat[n][n];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cin >> mat[i][j];
+        }
+        
+    }
+    for (int i = 0; i < n-1; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (i == 0)
+            {
+                cout << mat[i][j] << " ";
+            }
+            else if (j == n-1)
+            {
+                cout << mat[i][j] << " ";
+            }
+        }
+    }
+    for (int i = n-1; i > 0; i--)
+    {
+        for (int j = n-1; j >= 0; j--)
+        {
+            if (i == n-1)
+            {
+                cout << mat[i][j] << " ";
+            }
+            else if (j == 0)
+            {
+                cout << mat[i][j] << " ";
+            }
+        }
+        
+    }
+}
+
+III
+1.3
