@@ -71,3 +71,9 @@ int main(){
         cout << endl;
     }
 }
+
+III
+1.a
+2. 56789
+3.
+
